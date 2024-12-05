@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form name="myForm" onsubmit="return VF();">
+        Name: <input type="text" name="fname">
+        Age: <input id="id1" type="number" name="age" min="8">
+        <p id="message"></p>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        function VF() {
+            var x = document.forms["myForm"]["fname"].value;
+            var y = document.forms["myForm"]["age"].value;
+            if (x === "" || y === "") {
+                alert("Name and Age should not be empty");
+                return false;
+            }
+            alert("You logged in");
+            return true;
+        }
+    </script>
+</body>
+</html>
